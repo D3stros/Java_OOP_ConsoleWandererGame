@@ -54,5 +54,28 @@ public class Player {
 		field.printField();
 	}
 	
+	public void goForward(Field field) {
+		field.getField()[currentRow][currentColumn] = ' ';
+		
+		if(counter == 0 && field.getField()[currentRow- 1][currentColumn] != '#') {
+			field.getField()[currentRow- 1][currentColumn] = playerSign[counter];
+			currentRow -= 1;
+		} else if(counter == 1 && field.getField()[currentRow][currentColumn + 1] != '#') {
+			field.getField()[currentRow][currentColumn + 1] = playerSign[counter];
+			currentColumn += 1;
+		} else if(counter == 2 && field.getField()[currentRow + 1][currentColumn] != '#') {
+			field.getField()[currentRow + 1][currentColumn] = playerSign[counter];
+			currentRow += 1;
+		} else if(counter == 3 && field.getField()[currentRow][currentColumn - 1] != '#') {
+			field.getField()[currentRow][currentColumn - 1] = playerSign[counter];
+			currentColumn -= 1;
+		} else {
+			System.out.println("Error during step forward");
+			field.getField()[currentRow][currentColumn] = playerSign[counter];
+		}
+		
+		field.printField();
+	}
+	
 
 }

@@ -7,6 +7,15 @@ public class Field {
 		field = new char[10][10];
 	}
 	
+	
+	public char[][] getField() {
+		return field;
+	}
+
+	public void setField(char[][] field) {
+		this.field = field;
+	}
+	
 	public void buildField() {
 		//#Left and Right
 		for(int i=0; i<field.length; i++) {
@@ -32,7 +41,6 @@ public class Field {
 			}
 		}
 	}
-	
 	
 	// Print on Console
 	public void printField() {
